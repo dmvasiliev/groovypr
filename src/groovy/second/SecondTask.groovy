@@ -24,7 +24,7 @@ Size (in kb)
     static def findFiles(Closure closure) {
 
         def list = []
-        new File("src").eachFileRecurse(FileType.FILES) {
+        new File("src").eachFileRecurse(FileType.ANY) {
             def file = new File(it.toString())
             def info = new FileInfo()
             if (file.isDirectory()) {
@@ -36,10 +36,11 @@ Size (in kb)
                     }
                 }
                 info.quantityFiles = countFiles
-                info.fileSize = file.directorySize()
+                info.fileSize = file.directorySize() / 1024
             }
             if (file.isFile()) {
                 info.fileName = file.getName()
+                info.quantityFiles = ""
                 info.fileSize = file.length() / 1024
             }
             list << info
