@@ -8,7 +8,7 @@ class FirstTask {
 //        findAllWordsInLowercase()
 //        getStrFrom11To16()
 //        getOnlyEnglishLetters()
-        capitalizeAllWords("поменять во всех словах строки первую букву на заглавную")
+        println capitalizeAllWords("поменять во всех словах строки  6 первую букву на заглавную")
         println reverseString("поменять во всех bob строки reviver букву на rotator drotatord")
         println hasEmail("jkldfjgldfk ffff6f@tttt.yt  dflgkjdfklg lkdfjgd  ffff6f@tttt.yt dfklgjdfklgjl")
     }
@@ -35,12 +35,14 @@ class FirstTask {
     }
 
     static def capitalizeAllWords(String string) {
-        string.tokenize().each { print it.capitalize() + " " }
-
+        def capitalizeList = []
+        string.tokenize(" ").each({
+            capitalizeList << it.capitalize()
+        })
+        capitalizeList.join(" ")
     }
 
     static def reverseString(String string) {
-        //найти все слова, реверсия которых (обратный порядок букв) идентична самому слову и количество различных букв (исключая повторения) в слове меньше 5.
         def list = []
         string.tokenize().each {
             if (it == it.reverse() && it.toSet().size() < 5) {
