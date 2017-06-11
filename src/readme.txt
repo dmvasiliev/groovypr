@@ -1,3 +1,7 @@
+https://habrahabr.ru/post/145138/
+
+
+
 Groovy
 
 · Синтаксис языка, отличие от Java

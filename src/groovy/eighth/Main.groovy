@@ -7,7 +7,12 @@ import org.codehaus.groovy.control.CompilerConfiguration
  */
 class Main {
     public static void main(String[] args) {
-        useShell()
+
+        GroovyShell shell = new GroovyShell();
+        Object result = shell.evaluate(new File("d:/java stady/groovypr/src/groovy/script/GroovyScript.groovy"));
+        System.out.println("result=" + result);
+
+/*        useShell()
         println ""
         println "------------------------------------------------------------------------------"
         println ""
@@ -30,7 +35,7 @@ class Main {
         println "------------------------------------------------------------------------------"
         println ""
 
-        groovyScriptEngine()
+        groovyScriptEngine()*/
     }
 
     static void groovyScriptEngine() {
