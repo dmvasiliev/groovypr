@@ -1,6 +1,6 @@
 package fourth
 
-class FourPartTwo {
+class MyClosure {
 
     static Closure doSomething = { String fio, Integer age, Closure closure ->
         def fi = closure(fio)
